@@ -1,0 +1,26 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react_pubsub/node_modules
+react_pubsub/.pnp
+.pnp.js
+
+# testing
+react_pubsub/coverage
+
+# production
+react_pubsub/build
+
+# misc
+react_pubsub/.DS_Store
+react_pubsub/.env.local
+react_pubsub/.env.development.local
+react_pubsub/.env.test.local
+react_pubsub/.env.production.local
+
+react_pubsub/npm-debug.log*
+react_pubsub/yarn-debug.log*
+react_pubsub/yarn-error.log*
+
+*venv*
+.vscode
