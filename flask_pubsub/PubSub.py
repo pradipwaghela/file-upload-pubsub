@@ -14,8 +14,8 @@ class PubSub:
     
 
     def format_msg(self, event, msg) -> str:
-        if event:
-            return f'event:{event}\n{msg}'
+        #if event:
+        #   return f'event:{event}\n{msg}'
         return f'data: {msg}\n\n'
     
     def Publish(self, msg,event=None):
