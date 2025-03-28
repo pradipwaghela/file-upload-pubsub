@@ -45,17 +45,17 @@ const FileUpload = () => {
 
         const newEventSource = new EventSource(`http://localhost:5000/status/${uploadId}`);
 
-        newEventSource.onmessage = (event) => {
+        newEventSource.addEventListener (uploadId,(event) => {
             const data = event.data;
             console.log("Received update:", data);
             setStatus(data);
 
             // Close the connection if upload is completed
-            if (data=== "Completed") {
+            if (data === "Completed") {
                 newEventSource.close();
                 setEventSource(null);
             }
-        };
+        });
 
         newEventSource.onerror = (error) => {
             console.error("EventSource error:", error);
