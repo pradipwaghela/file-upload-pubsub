@@ -43,12 +43,11 @@ def upload_status(upload_id):
             while True:
                 try :
                     msg = messages.get(timeout=30)  # blocks until a new message arrives
-
                     yield msg
                 except queue.Empty:
                     print("Empty Queue")
-                    pubsub.Unsubscribe(upload_id,queue=messages)
                     yield "event : end\ndata:Connection closed"
+                    pubsub.Unsubscribe(upload_id,queue=messages)
                     break
     return flask.Response(stream(), mimetype='text/event-stream')
   
